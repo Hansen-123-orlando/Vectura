@@ -1,0 +1,21 @@
+body { font-family: 'Arial', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+h1, h2 { color: #2c3e50; }
+.container { max-width: 900px; margin: 0 auto; }
+.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+
+.status-bar { background: #e0f7fa; padding: 15px; border-radius: 8px; border-left: 5px solid #00acc1; margin-bottom: 20px; }
+
+label { display: block; margin-top: 10px; font-weight: bold; font-size: 0.9em; }
+input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+
+button { width: 100%; padding: 12px; margin-top: 15px; border: none; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
+button:hover { opacity: 0.9; }
+
+.btn-blue { background-color: #3498db; }
+.btn-green { background-color: #2ecc71; }
+.btn-orange { background-color: #e67e22; }
+.btn-purple { background-color: #9b59b6; }
+.btn-red { background-color: #e74c3c; }
+
+.ride-card { border: 1px solid #ddd; padding: 15px; margin-top: 10px; border-radius: 6px; background: #fafafa; }
+.badge { padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.8em; float: right; }
