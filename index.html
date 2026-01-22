@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectura - Ujian Blockchain</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.6.1/web3.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🚖 Vectura Ride Sharing (Final Exam)</h1>
+
+        <div class="status-bar">
+            <p><strong>Status Koneksi:</strong> <span id="connStatus">Menghubungkan...</span></p>
+            <p><strong>Akun Aktif:</strong> <span id="myAccount">-</span></p>
+            <p><strong>Jaringan:</strong> <span id="netStatus">-</span></p>
+        </div>
+
+        <div class="card">
+            <h2>👨‍✈️ 1. Registrasi Driver</h2>
+            <input type="text" id="regName" placeholder="Nama Lengkap">
+            <input type="text" id="regPlate" placeholder="Plat Nomor (B 1234 XYZ)">
+            <input type="text" id="regVehicle" placeholder="Jenis Kendaraan (Honda PCX / Avanza)">
+            <input type="number" id="regRate" placeholder="Tarif (ETH), contoh: 0.001" step="0.0001">
+            <button class="btn-blue" onclick="registerDriver()">Daftar Jadi Driver</button>
+        </div>
+
+        <div class="card">
+            <h2>🙋‍♂️ 2. Buat Pesanan (Penumpang)</h2>
+            <input type="text" id="reqPickup" placeholder="Lokasi Jemput">
+            <input type="text" id="reqDest" placeholder="Tujuan">
+            <input type="number" id="reqPrice" placeholder="Harga Penawaran (ETH)" step="0.0001">
+            <input type="text" id="reqNote" placeholder="Catatan Tambahan">
+            <button class="btn-green" onclick="requestRide()">Request Ride</button>
+        </div>
+
+        <div class="card">
+            <h2>📋 3. Daftar Pesanan & Aksi</h2>
+            <button onclick="loadRides()" style="background:#34495e; margin-bottom:15px;">🔄 Refresh Data
+                Blockchain</button>
+            <div id="ridesList">Loading data...</div>
+        </div>
+    </div>
+
+    <script src="js/ABI.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
