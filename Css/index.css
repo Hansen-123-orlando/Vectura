@@ -1,21 +1,264 @@
-body { font-family: 'Arial', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-h1, h2 { color: #2c3e50; }
-.container { max-width: 900px; margin: 0 auto; }
-.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+:root {
+    --primary: #4361ee;
+    --primary-dark: #3a0ca3;
+    --secondary: #7209b7;
+    --accent: #f72585;
+    --success: #06d6a0;
+    --warning: #ffd166;
+    --danger: #ef476f;
+    --text-main: #2b2d42;
+    --text-light: #8d99ae;
+    --bg-body: #f8f9fa;
+    --bg-card: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
 
-.status-bar { background: #e0f7fa; padding: 15px; border-radius: 8px; border-left: 5px solid #00acc1; margin-bottom: 20px; }
+* {
+    box-sizing: border-box;
+}
 
-label { display: block; margin-top: 10px; font-weight: bold; font-size: 0.9em; }
-input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-body);
+    margin: 0;
+    padding: 0;
+    color: var(--text-main);
+    line-height: 1.6;
+}
 
-button { width: 100%; padding: 12px; margin-top: 15px; border: none; border-radius: 4px; color: white; font-weight: bold; cursor: pointer; transition: 0.3s; }
-button:hover { opacity: 0.9; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-main);
+    margin-top: 0;
+    font-weight: 600;
+}
 
-.btn-blue { background-color: #3498db; }
-.btn-green { background-color: #2ecc71; }
-.btn-orange { background-color: #e67e22; }
-.btn-purple { background-color: #9b59b6; }
-.btn-red { background-color: #e74c3c; }
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
 
-.ride-card { border: 1px solid #ddd; padding: 15px; margin-top: 10px; border-radius: 6px; background: #fafafa; }
-.badge { padding: 4px 8px; border-radius: 4px; color: white; font-size: 0.8em; float: right; }
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Status Bar */
+.status-bar {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.status-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.status-label {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-value {
+    font-weight: 600;
+    color: var(--text-main);
+    font-size: 1rem;
+}
+
+#connStatus {
+    color: var(--primary);
+}
+
+/* Cards */
+.card {
+    background: var(--bg-card);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 15px;
+}
+
+/* Forms */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: var(--primary);
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(67, 97, 238, 0.15);
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+    filter: brightness(110%);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.btn-blue {
+    background-color: var(--primary);
+}
+
+.btn-green {
+    background-color: var(--success);
+}
+
+.btn-orange {
+    background-color: var(--warning);
+    color: #4a3b00;
+}
+
+.btn-purple {
+    background-color: var(--secondary);
+}
+
+.btn-red {
+    background-color: var(--danger);
+}
+
+.btn-refresh {
+    background-color: var(--text-main);
+    margin-bottom: 20px;
+}
+
+/* Ride List */
+#ridesList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ride-card {
+    border: 1px solid #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.ride-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #e0e0e0;
+}
+
+.ride-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.ride-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.ride-details p {
+    margin: 5px 0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ride-details strong {
+    color: var(--text-main);
+    min-width: 70px;
+}
+
+.ride-actions {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}

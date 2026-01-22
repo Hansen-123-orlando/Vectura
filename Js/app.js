@@ -147,13 +147,15 @@ async function loadRides() {
 
             html += `
                 <div class="ride-card">
-                    <div style="overflow:hidden;">
-                        <h3 style="margin:0; float:left;">Ride #${r.rideId}</h3>
+                    <div class="ride-header">
+                        <h3>Ride #${r.rideId}</h3>
                         <span class="badge" style="background:${colors[r.status]}">${statusText[r.status]}</span>
                     </div>
-                    <p><strong>📍 Rute:</strong> ${r.pickupLocation} ➝ ${r.destination}</p>
-                    <p><strong>💰 Harga:</strong> ${priceEth} ETH <small>(${r.notes})</small></p>
-                    <div style="margin-top:10px; border-top:1px solid #eee; padding-top:10px;">
+                    <div class="ride-details">
+                        <p><strong>📍 Rute:</strong> ${r.pickupLocation} ➝ ${r.destination}</p>
+                        <p><strong>💰 Harga:</strong> ${priceEth} ETH <small>(${r.notes})</small></p>
+                    </div>
+                    <div class="ride-actions">
                         ${buttons}
                     </div>
                 </div>`;
