@@ -1,17 +1,7 @@
-// ============================================================
-// BAGIAN INI WAJIB KAMU ISI DENGAN DATA DARI REMIX!
-// ============================================================
 
-// 1. Masukkan URL Infura kamu di sini (dari Langkah 1)
 const INFURA_URL = "https://sepolia.infura.io/v3/b65cacb9438a4cdab3aababb8cce2452";
 
-// 2. Masukkan Contract Address LAMA kamu di sini (Copy dari Remix)
 const CONTRACT_ADDRESS = "0x48b43b9c81cdE067e27E16cc4FBc6Ce948BdAe04";
-
-// ABI sudah dipindah ke js/ABI.js dan akan diload sebelum file ini.
-// const CONTRACT_ABI = ... 
-
-// ============================================================
 
 let web3;
 let contract;
